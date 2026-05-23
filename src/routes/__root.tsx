@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Target Survey Rewards" },
+      { name: "description", content: "Earn rewards off your next Target haul by completing our private survey & helping us complete affiliate deals." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Target Survey Rewards" },
+      { property: "og:description", content: "Earn rewards off your next Target haul by completing our private survey & helping us complete affiliate deals." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Target Survey Rewards" },
+      { name: "twitter:description", content: "Earn rewards off your next Target haul by completing our private survey & helping us complete affiliate deals." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/T7KWmaza91gH4iiH9BBrBmD8ooz1/social-images/social-1779571939939-Target-Logo_2_jpg.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/T7KWmaza91gH4iiH9BBrBmD8ooz1/social-images/social-1779571939939-Target-Logo_2_jpg.webp" },
     ],
     links: [
       {
