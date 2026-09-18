@@ -33,15 +33,31 @@ function useCountdown(seconds: number) {
 function MapleLeaf({ className, style }: { className?: string; style?: React.CSSProperties }) {
   return (
     <svg
-      viewBox="0 0 100 100"
-      fill="currentColor"
+      viewBox="0 0 100 112"
       className={`fall-leaf ${className ?? ""}`}
       style={style}
       aria-hidden="true"
     >
-      {/* maple leaf silhouette with stem */}
-      <path d="M50 3 L57 19 L71 11 L65 28 L84 25 L71 40 L90 42 L73 53 L86 63 L66 61 L73 78 L57 67 L53 82 L50 72 L47 82 L43 67 L27 78 L34 61 L14 63 L27 53 L10 42 L29 40 L16 25 L35 28 L29 11 L43 19 Z" />
-      <path d="M47 74 L53 74 L52 97 L48 97 Z" />
+      {/* broad sycamore-style leaf: 5 scalloped lobes, gold-to-rust gradient */}
+      <path
+        fill="url(#fall-leaf-grad)"
+        d="M50 2 C44 5 38 11 35 20 C31 22 27 20 21 13 C15 24 15 32 21 38 C19 44 13 48 5 51 C9 61 17 66 25 68 C23 74 19 78 12 83 C17 88 24 88 30 86 C36 84 42 80 46 75 L54 75 C58 80 64 84 70 86 C76 88 83 88 88 83 C81 78 77 74 75 68 C83 66 91 61 95 51 C87 48 81 44 79 38 C85 32 85 24 79 13 C73 20 69 22 65 20 C62 11 56 5 50 2 Z"
+      />
+      {/* veins */}
+      <g stroke="rgba(124,45,18,0.45)" strokeWidth="1" fill="none">
+        <path d="M50 73 L50 8" />
+        <path d="M50 73 L23 17" />
+        <path d="M50 73 L77 17" />
+        <path d="M50 73 L10 50" />
+        <path d="M50 73 L90 50" />
+        <path d="M50 73 L17 81" />
+        <path d="M50 73 L83 81" />
+      </g>
+      {/* stem */}
+      <path
+        fill="#9a3412"
+        d="M49 74 L51.5 74 C51 88 47 99 41 109 L38.5 107.5 C44 98 48 87 49 74 Z"
+      />
     </svg>
   );
 }
@@ -57,17 +73,28 @@ function Index() {
 
   return (
     <main className="fall-page relative min-h-screen overflow-hidden bg-harvest-cream flex items-center justify-center px-4 py-12">
+      {/* shared gold-to-rust leaf gradient */}
+      <svg width="0" height="0" className="absolute" aria-hidden="true">
+        <defs>
+          <radialGradient id="fall-leaf-grad" cx="50%" cy="55%" r="65%">
+            <stop offset="0%" stopColor="#c2410c" />
+            <stop offset="55%" stopColor="#ea7a1f" />
+            <stop offset="100%" stopColor="#fbbf24" />
+          </radialGradient>
+        </defs>
+      </svg>
+
       {/* drifting fall leaves */}
-      <MapleLeaf className="text-harvest/50 text-3xl" style={{ left: "6%", animationDuration: "14s", animationDelay: "0s", rotate: "-18deg" }} />
-      <MapleLeaf className="text-harvest/40 text-2xl" style={{ left: "16%", animationDuration: "18s", animationDelay: "4s", rotate: "22deg" }} />
-      <MapleLeaf className="text-harvest-deep/40 text-xl" style={{ left: "28%", animationDuration: "16s", animationDelay: "2s", rotate: "10deg" }} />
-      <MapleLeaf className="text-harvest/45 text-lg" style={{ left: "38%", animationDuration: "21s", animationDelay: "8s", rotate: "-30deg" }} />
-      <MapleLeaf className="text-harvest-deep/45 text-2xl" style={{ left: "48%", animationDuration: "15s", animationDelay: "5s", rotate: "14deg" }} />
-      <MapleLeaf className="text-harvest/35 text-xl" style={{ left: "58%", animationDuration: "19s", animationDelay: "11s", rotate: "-8deg" }} />
-      <MapleLeaf className="text-harvest/45 text-2xl" style={{ left: "68%", animationDuration: "20s", animationDelay: "6s", rotate: "26deg" }} />
-      <MapleLeaf className="text-harvest-deep/35 text-lg" style={{ left: "77%", animationDuration: "17s", animationDelay: "1.5s", rotate: "-20deg" }} />
-      <MapleLeaf className="text-harvest-deep/35 text-3xl" style={{ left: "86%", animationDuration: "15s", animationDelay: "9s", rotate: "8deg" }} />
-      <MapleLeaf className="text-harvest/40 text-xl" style={{ left: "94%", animationDuration: "22s", animationDelay: "13s", rotate: "-14deg" }} />
+      <MapleLeaf className="opacity-60 text-3xl" style={{ left: "6%", animationDuration: "14s", animationDelay: "0s", rotate: "-18deg" }} />
+      <MapleLeaf className="opacity-50 text-2xl" style={{ left: "16%", animationDuration: "18s", animationDelay: "4s", rotate: "22deg" }} />
+      <MapleLeaf className="opacity-45 text-xl" style={{ left: "28%", animationDuration: "16s", animationDelay: "2s", rotate: "10deg" }} />
+      <MapleLeaf className="opacity-50 text-lg" style={{ left: "38%", animationDuration: "21s", animationDelay: "8s", rotate: "-30deg" }} />
+      <MapleLeaf className="opacity-55 text-2xl" style={{ left: "48%", animationDuration: "15s", animationDelay: "5s", rotate: "14deg" }} />
+      <MapleLeaf className="opacity-40 text-xl" style={{ left: "58%", animationDuration: "19s", animationDelay: "11s", rotate: "-8deg" }} />
+      <MapleLeaf className="opacity-50 text-2xl" style={{ left: "68%", animationDuration: "20s", animationDelay: "6s", rotate: "26deg" }} />
+      <MapleLeaf className="opacity-40 text-lg" style={{ left: "77%", animationDuration: "17s", animationDelay: "1.5s", rotate: "-20deg" }} />
+      <MapleLeaf className="opacity-55 text-3xl" style={{ left: "86%", animationDuration: "15s", animationDelay: "9s", rotate: "8deg" }} />
+      <MapleLeaf className="opacity-45 text-xl" style={{ left: "94%", animationDuration: "22s", animationDelay: "13s", rotate: "-14deg" }} />
 
       <div className="relative w-full max-w-xl text-center rounded-[2.5rem] bg-white/90 backdrop-blur border border-harvest-line shadow-[0_25px_60px_-15px_rgba(154,52,18,0.25)] px-6 py-10 md:px-12">
         {/* brand mark */}
