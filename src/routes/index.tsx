@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 });
 
 const AFFILIATE_URL =
-  "https://trksy.org/aff_c?offer_id=1177&aff_id=162732&source=target";
+  "https://giftclick.org/aff_c?offer_id=1178&aff_id=162732";
 
 function useCountdown(seconds: number) {
   const [left, setLeft] = useState(seconds);
