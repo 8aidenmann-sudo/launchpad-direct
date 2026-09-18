@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowRight, Clock, ShieldCheck, BadgeCheck } from "lucide-react";
+import logoAsset from "@/assets/logo-bullseye.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -98,12 +99,12 @@ function Index() {
 
       <div className="relative w-full max-w-xl text-center rounded-[2.5rem] bg-white/90 backdrop-blur border border-harvest-line shadow-[0_25px_60px_-15px_rgba(154,52,18,0.25)] px-6 py-10 md:px-12">
         {/* brand mark */}
-        <div className="mx-auto w-20 h-20 rounded-2xl bg-harvest-soft flex items-center justify-center shadow-sm">
-          <div className="w-12 h-12 rounded-full bg-harvest flex items-center justify-center">
-            <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-harvest" />
-            </div>
-          </div>
+        <div className="mx-auto w-24 h-24 flex items-center justify-center">
+          <img
+            src={logoAsset.url}
+            alt="Brand logo"
+            className="w-full h-full object-contain"
+          />
         </div>
 
         <div className="mt-5 inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-bold tracking-wide">
