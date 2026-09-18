@@ -33,14 +33,15 @@ function useCountdown(seconds: number) {
 function MapleLeaf({ className, style }: { className?: string; style?: React.CSSProperties }) {
   return (
     <svg
-      viewBox="0 0 24 24"
+      viewBox="0 0 100 100"
       fill="currentColor"
       className={`fall-leaf ${className ?? ""}`}
       style={style}
       aria-hidden="true"
     >
-      <path d="M12 1l2.2 4.2 3-1.4-.8 4.4 4.6-.6-2.4 3.6 4.4 1.8-4 2.2 2 3.8-4.6-.8.2 4.6-4-2.6-1.6 4.6-1.6-4.6-4 2.6.2-4.6-4.6.8 2-3.8-4-2.2 4.4-1.8L3 7.6l4.6.6-.8-4.4 3 1.4z" />
-      <path d="M11.2 12h1.6v9.5h-1.6z" />
+      {/* maple leaf silhouette with stem */}
+      <path d="M50 3 L57 19 L71 11 L65 28 L84 25 L71 40 L90 42 L73 53 L86 63 L66 61 L73 78 L57 67 L53 82 L50 72 L47 82 L43 67 L27 78 L34 61 L14 63 L27 53 L10 42 L29 40 L16 25 L35 28 L29 11 L43 19 Z" />
+      <path d="M47 74 L53 74 L52 97 L48 97 Z" />
     </svg>
   );
 }
@@ -57,11 +58,16 @@ function Index() {
   return (
     <main className="fall-page relative min-h-screen overflow-hidden bg-harvest-cream flex items-center justify-center px-4 py-12">
       {/* drifting fall leaves */}
-      <MapleLeaf className="text-harvest/50 text-3xl" style={{ left: "8%", animationDuration: "14s", animationDelay: "0s" }} />
-      <MapleLeaf className="text-harvest/40 text-2xl" style={{ left: "22%", animationDuration: "18s", animationDelay: "4s" }} />
-      <MapleLeaf className="text-harvest-deep/40 text-xl" style={{ left: "50%", animationDuration: "16s", animationDelay: "2s" }} />
-      <MapleLeaf className="text-harvest/45 text-2xl" style={{ left: "70%", animationDuration: "20s", animationDelay: "6s" }} />
-      <MapleLeaf className="text-harvest-deep/35 text-3xl" style={{ left: "88%", animationDuration: "15s", animationDelay: "9s" }} />
+      <MapleLeaf className="text-harvest/50 text-3xl" style={{ left: "6%", animationDuration: "14s", animationDelay: "0s", rotate: "-18deg" }} />
+      <MapleLeaf className="text-harvest/40 text-2xl" style={{ left: "16%", animationDuration: "18s", animationDelay: "4s", rotate: "22deg" }} />
+      <MapleLeaf className="text-harvest-deep/40 text-xl" style={{ left: "28%", animationDuration: "16s", animationDelay: "2s", rotate: "10deg" }} />
+      <MapleLeaf className="text-harvest/45 text-lg" style={{ left: "38%", animationDuration: "21s", animationDelay: "8s", rotate: "-30deg" }} />
+      <MapleLeaf className="text-harvest-deep/45 text-2xl" style={{ left: "48%", animationDuration: "15s", animationDelay: "5s", rotate: "14deg" }} />
+      <MapleLeaf className="text-harvest/35 text-xl" style={{ left: "58%", animationDuration: "19s", animationDelay: "11s", rotate: "-8deg" }} />
+      <MapleLeaf className="text-harvest/45 text-2xl" style={{ left: "68%", animationDuration: "20s", animationDelay: "6s", rotate: "26deg" }} />
+      <MapleLeaf className="text-harvest-deep/35 text-lg" style={{ left: "77%", animationDuration: "17s", animationDelay: "1.5s", rotate: "-20deg" }} />
+      <MapleLeaf className="text-harvest-deep/35 text-3xl" style={{ left: "86%", animationDuration: "15s", animationDelay: "9s", rotate: "8deg" }} />
+      <MapleLeaf className="text-harvest/40 text-xl" style={{ left: "94%", animationDuration: "22s", animationDelay: "13s", rotate: "-14deg" }} />
 
       <div className="relative w-full max-w-xl text-center rounded-[2.5rem] bg-white/90 backdrop-blur border border-harvest-line shadow-[0_25px_60px_-15px_rgba(154,52,18,0.25)] px-6 py-10 md:px-12">
         {/* brand mark */}
