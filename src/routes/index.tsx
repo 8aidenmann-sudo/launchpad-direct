@@ -103,7 +103,7 @@ function Index() {
           <img
             src={logoAsset.url}
             alt="Brand logo"
-            className="w-full h-full object-contain rounded-2xl"
+            className="w-full h-full object-contain"
           />
         </div>
 
