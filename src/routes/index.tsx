@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowRight, Clock, ShieldCheck, BadgeCheck } from "lucide-react";
-import logoAsset from "@/assets/logo-bullseye.png.asset.json";
+import logoAsset from "@/assets/logo-bullseye-v2.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
