@@ -132,6 +132,48 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+/*
+ * Fall season palette.
+ * Warm harvest tones used by the offer landing page.
+ */
+@theme {
+  --color-harvest: oklch(0.58 0.19 45);
+  --color-harvest-deep: oklch(0.47 0.17 38);
+  --color-harvest-ink: oklch(0.26 0.05 40);
+  --color-harvest-cream: oklch(0.97 0.025 85);
+  --color-harvest-soft: oklch(0.94 0.05 78);
+  --color-harvest-soft-ink: oklch(0.47 0.08 60);
+  --color-harvest-line: oklch(0.89 0.05 75);
+  --font-display: "Playfair Display", Georgia, serif;
+}
+
+/* Gentle drifting fall leaves in the page background */
+@keyframes fall-leaf-drift {
+  0% {
+    transform: translateY(-8vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(110vh) rotate(340deg);
+    opacity: 0;
+  }
+}
+
+.fall-leaf {
+  position: absolute;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  pointer-events: none;
+  animation: fall-leaf-drift linear infinite;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
