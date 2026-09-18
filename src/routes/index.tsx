@@ -114,11 +114,11 @@ function Index() {
         <h1 className="mt-6 font-display text-5xl md:text-6xl font-extrabold text-harvest-ink leading-tight">
           Claim Your <span className="text-harvest">$750</span>
           <br />
-          Gift Card
+          Target Gift
         </h1>
 
         <p className="mt-5 text-harvest-soft-ink text-base max-w-sm mx-auto">
-          Complete a few simple steps to claim your reward this season.
+          Complete a few simple steps to claim your reward this fall season.
         </p>
 
         <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-harvest text-white text-sm font-semibold shadow-[0_10px_25px_-8px_rgba(154,52,18,0.6)]">
