@@ -67,7 +67,7 @@ function Index() {
   const steps = [
     'Click on "Get Started"',
     "Enter your basic details",
-    "Complete 3-5 deals",
+    "Complete 8-10 tasks",
     "Claim your reward",
   ];
 
