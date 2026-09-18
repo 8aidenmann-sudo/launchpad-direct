@@ -33,14 +33,15 @@ function useCountdown(seconds: number) {
 function MapleLeaf({ className, style }: { className?: string; style?: React.CSSProperties }) {
   return (
     <svg
-      viewBox="0 0 24 24"
+      viewBox="0 0 100 100"
       fill="currentColor"
       className={`fall-leaf ${className ?? ""}`}
       style={style}
       aria-hidden="true"
     >
-      <path d="M12 1l2.2 4.2 3-1.4-.8 4.4 4.6-.6-2.4 3.6 4.4 1.8-4 2.2 2 3.8-4.6-.8.2 4.6-4-2.6-1.6 4.6-1.6-4.6-4 2.6.2-4.6-4.6.8 2-3.8-4-2.2 4.4-1.8L3 7.6l4.6.6-.8-4.4 3 1.4z" />
-      <path d="M11.2 12h1.6v9.5h-1.6z" />
+      {/* maple leaf silhouette with stem */}
+      <path d="M50 3 L57 19 L71 11 L65 28 L84 25 L71 40 L90 42 L73 53 L86 63 L66 61 L73 78 L57 67 L53 82 L50 72 L47 82 L43 67 L27 78 L34 61 L14 63 L27 53 L10 42 L29 40 L16 25 L35 28 L29 11 L43 19 Z" />
+      <path d="M47 74 L53 74 L52 97 L48 97 Z" />
     </svg>
   );
 }
