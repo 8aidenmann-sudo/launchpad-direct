@@ -5,8 +5,12 @@ import { ArrowRight, Clock, ShieldCheck, BadgeCheck } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Claim Your $750 Gift Card" },
-      { name: "description", content: "Complete a few simple steps to claim your $750 reward." },
+      { title: "Claim Your $750 Gift Card — Fall Offer" },
+      {
+        name: "description",
+        content:
+          "Complete a few simple steps to claim your $750 reward before the fall offer ends.",
+      },
     ],
   }),
   component: Index,
@@ -26,6 +30,21 @@ function useCountdown(seconds: number) {
   return `${m}:${s}`;
 }
 
+function MapleLeaf({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={`fall-leaf ${className ?? ""}`}
+      style={style}
+      aria-hidden="true"
+    >
+      <path d="M12 1l2.2 4.2 3-1.4-.8 4.4 4.6-.6-2.4 3.6 4.4 1.8-4 2.2 2 3.8-4.6-.8.2 4.6-4-2.6-1.6 4.6-1.6-4.6-4 2.6.2-4.6-4.6.8 2-3.8-4-2.2 4.4-1.8L3 7.6l4.6.6-.8-4.4 3 1.4z" />
+      <path d="M11.2 12h1.6v9.5h-1.6z" />
+    </svg>
+  );
+}
+
 function Index() {
   const time = useCountdown(15 * 60 - 11);
   const steps = [
@@ -36,58 +55,70 @@ function Index() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#f7f7f8] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-xl text-center">
-        <div className="mx-auto w-20 h-20 rounded-2xl bg-white shadow-sm flex items-center justify-center">
-          <div className="w-12 h-12 rounded-full bg-[#cc0000] flex items-center justify-center">
+    <main className="fall-page relative min-h-screen overflow-hidden bg-harvest-cream flex items-center justify-center px-4 py-12">
+      {/* drifting fall leaves */}
+      <MapleLeaf className="text-harvest/50 text-3xl" style={{ left: "8%", animationDuration: "14s", animationDelay: "0s" }} />
+      <MapleLeaf className="text-harvest/40 text-2xl" style={{ left: "22%", animationDuration: "18s", animationDelay: "4s" }} />
+      <MapleLeaf className="text-harvest-deep/40 text-xl" style={{ left: "50%", animationDuration: "16s", animationDelay: "2s" }} />
+      <MapleLeaf className="text-harvest/45 text-2xl" style={{ left: "70%", animationDuration: "20s", animationDelay: "6s" }} />
+      <MapleLeaf className="text-harvest-deep/35 text-3xl" style={{ left: "88%", animationDuration: "15s", animationDelay: "9s" }} />
+
+      <div className="relative w-full max-w-xl text-center rounded-[2.5rem] bg-white/90 backdrop-blur border border-harvest-line shadow-[0_25px_60px_-15px_rgba(154,52,18,0.25)] px-6 py-10 md:px-12">
+        {/* brand mark */}
+        <div className="mx-auto w-20 h-20 rounded-2xl bg-harvest-soft flex items-center justify-center shadow-sm">
+          <div className="w-12 h-12 rounded-full bg-harvest flex items-center justify-center">
             <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#cc0000]" />
+              <div className="w-2.5 h-2.5 rounded-full bg-harvest" />
             </div>
           </div>
         </div>
 
-        <div className="mt-5 inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-red-50 text-[#cc0000] text-xs font-bold tracking-wide">
+        <div className="mt-5 inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-bold tracking-wide">
           <BadgeCheck className="w-3.5 h-3.5" /> VERIFIED
         </div>
 
-        <h1 className="mt-6 text-5xl md:text-6xl font-extrabold text-neutral-900 leading-tight">
-          Claim Your <span className="text-[#cc0000]">$750</span>
+        <h1 className="mt-6 font-display text-5xl md:text-6xl font-extrabold text-harvest-ink leading-tight">
+          Claim Your <span className="text-harvest">$750</span>
           <br />
           Gift Card
         </h1>
 
-        <p className="mt-5 text-neutral-500 text-base max-w-sm mx-auto">
-          Complete a few simple steps to claim your reward.
+        <p className="mt-5 text-harvest-soft-ink text-base max-w-sm mx-auto">
+          Complete a few simple steps to claim your reward this season.
         </p>
 
-        <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#cc0000] text-white text-sm font-semibold shadow-md">
-          <Clock className="w-4 h-4" /> Offer ends in {time}
+        <div className="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-harvest text-white text-sm font-semibold shadow-[0_10px_25px_-8px_rgba(154,52,18,0.6)]">
+          <Clock className="w-4 h-4 animate-pulse" /> Offer ends in {time}
         </div>
 
         <ul className="mt-8 space-y-4 text-left max-w-sm mx-auto">
           {steps.map((s, i) => (
-            <li key={i} className="flex items-center gap-3">
-              <span className="w-7 h-7 rounded-full border-2 border-[#cc0000] text-[#cc0000] flex items-center justify-center text-sm font-semibold">
+            <li
+              key={i}
+              className="flex items-center gap-3 rounded-2xl px-4 py-3 bg-harvest-cream/70 border border-harvest-line/60 transition-colors hover:border-harvest/40"
+            >
+              <span className="w-7 h-7 rounded-full bg-harvest text-white flex items-center justify-center text-sm font-bold shrink-0">
                 {i + 1}
               </span>
-              <span className="font-semibold text-neutral-900">{s}</span>
+              <span className="font-semibold text-harvest-ink">{s}</span>
             </li>
           ))}
         </ul>
 
         <a
           href={AFFILIATE_URL}
-          className="mt-10 w-full max-w-md mx-auto flex items-center justify-center gap-2 bg-[#cc0000] hover:bg-[#b30000] text-white font-semibold py-4 px-6 rounded-full shadow-[0_10px_30px_-5px_rgba(204,0,0,0.5)] transition-colors"
+          className="group mt-10 w-full max-w-md mx-auto flex items-center justify-center gap-2 bg-gradient-to-r from-harvest to-harvest-deep hover:from-harvest-deep hover:to-harvest text-white font-bold text-lg py-4 px-6 rounded-2xl shadow-lg shadow-harvest/30 transition-all hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wide"
         >
-          Get Started <ArrowRight className="w-5 h-5" />
+          Get Started{" "}
+          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
         </a>
 
-        <p className="mt-4 text-sm text-neutral-600">
-          <span className="text-[#cc0000] font-bold">1,289</span> claimed today
+        <p className="mt-4 text-sm text-harvest-soft-ink">
+          <span className="text-harvest font-bold">1,289</span> claimed today
         </p>
 
-        <p className="mt-3 inline-flex items-center gap-1.5 text-xs text-neutral-500">
-          <ShieldCheck className="w-3.5 h-3.5" /> 100% secure & verified process
+        <p className="mt-3 inline-flex items-center gap-1.5 text-xs text-harvest-soft-ink/80">
+          <ShieldCheck className="w-3.5 h-3.5" /> 100% secure &amp; verified process
         </p>
       </div>
     </main>
